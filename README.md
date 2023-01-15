@@ -75,3 +75,24 @@ npm run dev
   npm run migration:create "nome da migration" --> cria uma migration
   npm run migrate                              --> executa as migrations
   npm run migrate:revert                       --> reverte a ultima migration
+
+# SOBRE A APLICAÇÃO
+
+## FEATURES
+
+  * CRUD de usuários
+  * Listar, mostrar e deletar transações
+  * Realizar conversões entre modemas
+## TECNOLOGIAS UTILIZADAS
+
+  * TYPEORM - ORM que eu tenho mais familiaridade por trabalhar com ele todo dia
+  * SQLITE - É o único banco de dados embedded que o TYPEORM suporta
+  * JEST - É a lib mais fácil para realizar testes no JS
+
+## CAMADAS
+  Busquei por seguir o padrão clean architecture e respeitar os princípios SOLID
+
+  * INFRA: Camada que faz as implementações mais externas à API
+  * DOMAIN: Camada que guarda as regras de negócio da aplicação
+  * APPLICATION: Camada que acessa usa a domain para repassar features para os usuários da API
+  * MAIN: Camada que configura a API, define os ENDPOINTS e cria os adaptadores da aplicação.
